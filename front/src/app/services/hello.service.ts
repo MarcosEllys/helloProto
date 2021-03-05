@@ -14,6 +14,9 @@ export class HelloWorldService {
   }
 
   hello(name: string): Promise <Hello> {
+    var metadata = new grpc.Metadata();
+    metadata.append('Authorization', 'secret');
+    
     return new Promise((resolve, reject) => {
       const req = new HelloRequest();
       req.setName(name);
