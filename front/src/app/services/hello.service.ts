@@ -20,7 +20,7 @@ export class HelloWorldService {
     return new Promise((resolve, reject) => {
       const req = new HelloRequest();
       req.setName(name);
-      this.client.sayHello(req, null, (err, response: HelloResponse) => {
+      this.client.sayHello(req, metadata, (err, response: HelloResponse) => {
         if (err) {
           return reject(err);
         }
